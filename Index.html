@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Ejercicio JS</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Sebastian Garcia">
+</head>
+
+<body>
+    <h1>Clase de desarrollo Web</h1>
+    <h2>Ingrese la cantidad de estudiantes</h2>
+    <input type="text" id="idCantidadEstudiantes">
+
+
+    <button id="btnCrearFormularios" onclick="EjecutarCrearFormulario()">Crear Formulario</button>
+    <button id="btnCrearFormularios" onclick="EjecutarResultados()">Aceptar</button>
+    <div id="divEstudiantes"></div>
+    <div id="divResultados"></div>
+    <script type="text/javascript">
+
+
+        function EjecutarCrearFormulario() {
+            var output = document.getElementById('divEstudiantes');
+            var numeroEstudiantes = document.getElementById('idCantidadEstudiantes').value;
+            var texthtml = "";
+            for (let index = 0; index < numeroEstudiantes; index++) {
+                
+                texthtml += '<h2>Ingrese la edad del estudiante No. ' + (index + 1) + '</h2><input type="text" id="idEdadEstudiantes">';
+                texthtml += '<h2>Ingrese la estatura del estudiante No. ' + (index + 1) + ' </h2><input type="text"id="idEstaturaEstudiantes">';
+
+                output.innerHTML = texthtml;
+            }
+        }
+
+
+        function EjecutarResultados() {
+            var numeroEstudiantes=document.getElementById('idCantidadEstudiantes').value;
+            
+            var salida = document.getElementById('divResultados');
+    
+            var edad = document.getElementById('idEdadEstudiantes').value;
+            var estatura = document.getElementById('idEstaturaEstudiantes').value;
+            
+            for (let index = 0; index <numeroEstudiantes; index++) {    
+
+            salida.innerHTML= 'La edad del estudiante No '+ (index + 1) + ' es: ' + edad+ ' y la estatura es: '+estatura;    
+
+            }
+
+            }
+
+
+    </script>
+</body>
+
+</html>
